@@ -40,14 +40,14 @@ public class Differ {
 
         keys.forEach(key -> {
             if (!data1.containsKey(key)) {
-                result.append("+ ").append(key).append(": ").append(data2.get(key)).append("\n");
+                result.append("  + ").append(key).append(": ").append(data2.get(key)).append("\n");
             } else if (!data2.containsKey(key)) {
-                result.append("- ").append(key).append(": ").append(data1.get(key)).append("\n");
+                result.append("  - ").append(key).append(": ").append(data1.get(key)).append("\n");
             } else if (data1.get(key).equals(data2.get(key))) {
-                result.append("  ").append(key).append(": ").append(data1.get(key)).append("\n");
+                result.append("    ").append(key).append(": ").append(data1.get(key)).append("\n");
             } else {
-                result.append("- ").append(key).append(": ").append(data1.get(key)).append("\n");
-                result.append("+ ").append(key).append(": ").append(data2.get(key)).append("\n");
+                result.append("  - ").append(key).append(": ").append(data1.get(key)).append("\n");
+                result.append("  + ").append(key).append(": ").append(data2.get(key)).append("\n");
             }
         });
 
