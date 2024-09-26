@@ -7,12 +7,12 @@ import java.util.Map;
 import java.util.TreeSet;
 
 public class Differ {
-    public static String generate(String filepath1, String filepath2) throws Exception {
-        var data1 = getData(filepath1);
-        var data2 = getData(filepath2);
+    public static String generate(String filePath1, String filePath2) throws Exception {
+        var data1 = getData(filePath1);
+        var data2 = getData(filePath2);
 
-        var dataType = getFormat(filepath1);
-        var dataType2 = getFormat(filepath2);
+        var dataType = getFormat(filePath1);
+        var dataType2 = getFormat(filePath2);
 
         var parsedData1 = Parser.parseData(data1, dataType);
         var parsedData2 = Parser.parseData(data2, dataType2);
@@ -20,8 +20,8 @@ public class Differ {
         return getDiff(parsedData1, parsedData2);
     }
 
-    public static String getData(String filepath) throws IOException {
-        var path = Paths.get(filepath).toAbsolutePath().normalize();
+    public static String getData(String filePath) throws IOException {
+        var path = Paths.get(filePath).toAbsolutePath().normalize();
         return Files.readString(path);
     }
 
