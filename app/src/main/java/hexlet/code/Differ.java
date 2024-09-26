@@ -1,9 +1,5 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -11,12 +7,15 @@ import java.util.Map;
 import java.util.TreeSet;
 
 public class Differ {
-    public static String generate(String filepath1, String filepath2) throws IOException {
+    public static String generate(String filepath1, String filepath2) throws Exception {
         var data1 = getData(filepath1);
         var data2 = getData(filepath2);
 
-        var parsedData1 = parseData(data1);
-        var parsedData2 = parseData(data2);
+        var dataType = getFormat(filepath1);
+        var dataType2 = getFormat(filepath2);
+
+        var parsedData1 = Parser.parseData(data1, dataType);
+        var parsedData2 = Parser.parseData(data2, dataType2);
 
         return getDiff(parsedData1, parsedData2);
     }
@@ -26,9 +25,9 @@ public class Differ {
         return Files.readString(path);
     }
 
-    public static Map<String, Object> parseData(String data) throws JsonProcessingException {
-        var objectMapper = new ObjectMapper();
-        return objectMapper.readValue(data, new TypeReference<>() { });
+    public static String getFormat(String filepath) {
+        var formatStart = filepath.lastIndexOf(".");
+        return filepath.substring(formatStart + 1);
     }
 
     public static String getDiff(Map<String, Object> data1, Map<String, Object> data2) {
