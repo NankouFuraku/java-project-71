@@ -8,3 +8,5 @@
 <a href="https://codeclimate.com/github/NankouFuraku/java-project-71/test_coverage"><img src="https://api.codeclimate.com/v1/badges/1622d7194106dea6598d/test_coverage" /></a>
 
 ### Comparing two JSON files: [![asciicast](https://asciinema.org/a/8q2V07lCP2FzGweHKT1VUpEBB.svg)](https://asciinema.org/a/8q2V07lCP2FzGweHKT1VUpEBB)
+
+### Comparing two plain YAML files: [![asciicast](https://asciinema.org/a/otUewb3XQjmOU2yIlyLxlQjfu.svg)](https://asciinema.org/a/otUewb3XQjmOU2yIlyLxlQjfu)
