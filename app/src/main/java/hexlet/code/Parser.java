@@ -12,7 +12,7 @@ public class Parser {
         var mapper = switch (format) {
             case "yaml" -> new YAMLMapper();
             case "json" -> new ObjectMapper();
-            default -> throw new IOException("Invalid format");
+            default -> throw new IOException("Invalid format: " + format);
 
         };
         return mapper.readValue(data, new TypeReference<>() { });
