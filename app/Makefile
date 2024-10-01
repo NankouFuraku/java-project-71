@@ -27,6 +27,11 @@ lint:
 update-deps:
 	./gradlew useLatestVersions
 
+json:
+	./build/install/app/bin/app src/main/resources/fixtures/file1.json src/main/resources/fixtures/file2.json
+
+yaml:
+	./build/install/app/bin/app src/main/resources/fixtures/file1.yaml src/main/resources/fixtures/file2.yaml
 
 build-run: build run
 
