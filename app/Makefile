@@ -45,6 +45,12 @@ yaml-stylish:
 yaml-plain:
 	./build/install/app/bin/app -f plain src/main/resources/fixtures/file1.yaml src/main/resources/fixtures/file2.yaml
 
+json-json:
+	./build/install/app/bin/app -f json src/main/resources/fixtures/file1.json src/main/resources/fixtures/file2.json
+
+yaml-json:
+	./build/install/app/bin/app -f json src/main/resources/fixtures/file1.yaml src/main/resources/fixtures/file2.yaml
+
 build-run: build run
 
 .PHONY: build

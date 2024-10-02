@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AppTest {
     private static String expectedStylish;
     private static String expectedPlain;
+    private static String expectedJson;
     private static Path getFixturePath(String fileName) {
         return Paths.get("src", "test", "resources", "fixtures", fileName)
                 .toAbsolutePath().normalize();
@@ -25,6 +26,7 @@ public class AppTest {
     public static void beforeAll() throws Exception {
         expectedStylish = readFixture("resultStylish.txt");
         expectedPlain = readFixture("resultPlain.txt");
+        expectedJson = readFixture("resultJson.txt");
     }
 
     @ParameterizedTest
@@ -36,10 +38,12 @@ public class AppTest {
         var actualDefaultFormat = Differ.generate(filePath1, filePath2);
         var actualStylish = Differ.generate(filePath1, filePath2, "stylish");
         var actualPlain = Differ.generate(filePath1, filePath2, "plain");
+        var actualJson = Differ.generate(filePath1, filePath2, "json");
 
         assertEquals(expectedStylish, actualDefaultFormat);
         assertEquals(expectedStylish, actualStylish);
         assertEquals(expectedPlain, actualPlain);
+        assertEquals(expectedJson, actualJson);
     }
 
 }
