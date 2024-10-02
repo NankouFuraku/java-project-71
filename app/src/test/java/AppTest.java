@@ -30,7 +30,7 @@ public class AppTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"json", "yaml"})
+    @ValueSource(strings = {"json", "yaml", "yml"})
     public void testGenerate(String type) throws Exception {
         var filePath1 = getFixturePath("file1." + type).toString();
         var filePath2 = getFixturePath("file2." + type).toString();

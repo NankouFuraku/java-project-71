@@ -10,7 +10,7 @@ import java.util.Map;
 public class Parser {
     public static Map<String, Object> parseData(String data, String format) throws IOException {
         var mapper = switch (format) {
-            case "yaml" -> new YAMLMapper();
+            case "yaml", "yml" -> new YAMLMapper();
             case "json" -> new ObjectMapper();
             default -> throw new IOException("Invalid format: " + format);
 
