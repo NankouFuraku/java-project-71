@@ -12,3 +12,5 @@
 ### Comparing two plain YAML files: [![asciicast](https://asciinema.org/a/otUewb3XQjmOU2yIlyLxlQjfu.svg)](https://asciinema.org/a/otUewb3XQjmOU2yIlyLxlQjfu)
 
 ### Comparing two JSON and YAML files with nested Structure: [![asciicast](https://asciinema.org/a/hViZWHvSpIx1u3j9NJyG8unAc.svg)](https://asciinema.org/a/hViZWHvSpIx1u3j9NJyG8unAc)
+
+### Comparing two JSON and YAML files in Plain format: [![asciicast](https://asciinema.org/a/uhSulDjlAUD2zgT905KLJHcyK.svg)](https://asciinema.org/a/uhSulDjlAUD2zgT905KLJHcyK)
