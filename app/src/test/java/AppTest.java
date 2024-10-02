@@ -9,7 +9,8 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppTest {
-    private static String expected;
+    private static String expectedStylish;
+    private static String expectedPlain;
     private static Path getFixturePath(String fileName) {
         return Paths.get("src", "test", "resources", "fixtures", fileName)
                 .toAbsolutePath().normalize();
@@ -22,7 +23,8 @@ public class AppTest {
 
     @BeforeAll
     public static void beforeAll() throws Exception {
-        expected = readFixture("resultJson.txt");
+        expectedStylish = readFixture("resultStylish.txt");
+        expectedPlain = readFixture("resultPlain.txt");
     }
 
     @ParameterizedTest
@@ -30,8 +32,14 @@ public class AppTest {
     public void testGenerate(String type) throws Exception {
         var filePath1 = getFixturePath("file1." + type).toString();
         var filePath2 = getFixturePath("file2." + type).toString();
-        var actual = Differ.generate(filePath1, filePath2);
-        assertEquals(expected, actual);
+
+        var actualDefaultFormat = Differ.generate(filePath1, filePath2);
+        var actualStylish = Differ.generate(filePath1, filePath2, "stylish");
+        var actualPlain = Differ.generate(filePath1, filePath2, "plain");
+
+        assertEquals(expectedStylish, actualDefaultFormat);
+        assertEquals(expectedStylish, actualStylish);
+        assertEquals(expectedPlain, actualPlain);
     }
 
 }
