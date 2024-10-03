@@ -1,3 +1,6 @@
+### Difference Generator
+#### This application is designed to compose a difference between two JSON, YAML or YML files. The Diffrence(Diff) can also be shown in different formats. To use the application, type the desired format of output(the default one is "Stylish") and paths to files to compares.
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/NankouFuraku/java-project-71/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/NankouFuraku/java-project-71/actions)
 
