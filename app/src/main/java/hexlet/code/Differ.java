@@ -30,8 +30,14 @@ public class Differ {
     }
 
     public static String getType(String filepath) {
-        var typeStart = filepath.lastIndexOf(".");
-        return filepath.substring(typeStart + 1);
+        String[] types = {"json", "yaml", "yml"};
+        for (var type : types) {
+            if (filepath.endsWith(type)) {
+                return type;
+            }
+        }
+
+        throw new IllegalArgumentException("Unsupported format :" + filepath);
     }
 
 }
