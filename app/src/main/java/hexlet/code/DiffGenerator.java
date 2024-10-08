@@ -23,7 +23,7 @@ public class DiffGenerator {
             } else if (Objects.equals(data1.get(key), data2.get(key))) {
                 statusMap.put("status", "unchanged");
                 statusMap.put("value", data1.get(key));
-            } else  if (!Objects.equals(data1.get(key), data2.get(key))) {
+            } else if (!Objects.equals(data1.get(key), data2.get(key))) {
                 statusMap.put("status", "changed");
                 statusMap.put("oldValue", data1.get(key));
                 statusMap.put("newValue", data2.get(key));

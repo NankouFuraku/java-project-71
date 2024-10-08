@@ -29,15 +29,11 @@ public class Differ {
         return Files.readString(path);
     }
 
-    public static String getType(String filepath) {
-        String[] types = {"json", "yaml", "yml"};
-        for (var type : types) {
-            if (filepath.endsWith(type)) {
-                return type;
-            }
-        }
-
-        throw new IllegalArgumentException("Unsupported format :" + filepath);
+    private static String getType(String filePath) {
+        int index = filePath.lastIndexOf('.');
+        return index > 0
+                ? filePath.substring(index + 1)
+                : "";
     }
 
 }
